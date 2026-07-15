@@ -2,11 +2,11 @@
   "eval_scenarios": 1060,
   "data_source": "real operational CSV data",
   "dqn_score": 4345,
-  "random_score": -2390,
+  "random_score": -2335,
   "always_intervene_score": -8590,
   "never_intervene_score": 4345,
-  "outperformance_pct": 281.8,
+  "outperformance_pct": 286.08,
   "dqn_accuracy_pct": 91.42,
-  "random_accuracy_pct": 48.02,
+  "random_accuracy_pct": 48.58,
   "congestion_trigger": 0.3
 }
