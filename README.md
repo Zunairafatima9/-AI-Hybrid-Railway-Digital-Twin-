@@ -5,18 +5,17 @@
 
 ## 1. COMPLETE FOLDER STRUCTURE
 
-Place every file exactly as shown below. The tree shows both files we
-provided (marked ★) and original files you keep unchanged (unmarked).
+
 
 ```
 railway_project/                          ← project root
 │
-├── ai_dashboard.py               ★ REPLACED  (Streamlit analytics)
-├── requirements.txt              ★ NEW
-├── README.md                     ★ NEW
+├── ai_dashboard.py               
+├── requirements.txt              
+├── README.md                     
 │
 ├── data/
-│   └── csv/                      ← PUT ALL 11 CSV FILES HERE
+│   └── csv/                      
 │       ├── baseline_timetable.csv
 │       ├── delay_statistics_final.csv
 │       ├── operational_event_log.csv
@@ -49,60 +48,54 @@ railway_project/                          ← project root
 │   └── approved_actions.json     (HITL approved actions)
 │
 ├── backend/
-│   ├── data_pipeline.py          ★ NEW      — loads & validates all CSVs
-│   ├── train_xgboost_real.py     ★ NEW      — trains XGBoost on real data
-│   ├── dqn_env.py                ★ NEW      — DQN environment + training
-│   ├── app.py                    ★ REPLACED — Flask API (all endpoints)
-│   ├── benchmark_xgboost.py      ★ REPLACED — evaluates production model
-│   ├── benchmark_dqn.py          ★ REPLACED — DQN vs baselines
-│   ├── parse_network.py          (KEEP AS-IS — SUMO GeoJSON exporter)
-│   │
-│   │   ── OLD FILES: DELETE these, they are superseded ──
-│   ├── train_xgboost.py          DELETE (was synthetic/circular)
-│   └── train_dqn.py              DELETE (was synthetic/circular)
+│   ├── data_pipeline.py               — loads & validates all CSVs
+│   ├── train_xgboost_real.py          — trains XGBoost on real data
+│   ├── dqn_env.py                     — DQN environment + training
+│   ├── app.py                         — Flask API (all endpoints)
+│   ├── benchmark_xgboost.py           — evaluates production model
+│   ├── benchmark_dqn.py               — DQN vs baselines
+│   ├── parse_network.py          
+│   
 │
 ├── simulation/
-│   ├── run_digital_twin.py       ★ REPLACED — main SUMO runner
-│   ├── generate_dummy_traffic.py ★ REPLACED — traffic generator + stress mode
-│   ├── train_dqn_full.py         ★ REPLACED — SUMO in-the-loop DQN training
-│   ├── sumo.sumocfg              (KEEP AS-IS — SUMO configuration)
-│   ├── stations.py               (KEEP AS-IS — station coordinate constants)
-│   ├── find_station_edges.py     (KEEP AS-IS — sumolib utility)
+│   ├── run_digital_twin.py       — main SUMO runner
+│   ├── generate_dummy_traffic.py  — traffic generator + stress mode
+│   ├── train_dqn_full.py          — SUMO in-the-loop DQN training
+│   ├── sumo.sumocfg              ( — SUMO configuration)
+│   ├── stations.py               ( — station coordinate constants)
+│   ├── find_station_edges.py     (— sumolib utility)
 │   │
-│   │   ── OLD FILE: EDIT this one ──
-│   └── live_ir_status.py         EDIT: remove hardcoded API key (see §6)
+│   │   
+│   └── live_ir_status.py         
 │
 ├── data/
-│   └── network/                  (KEEP AS-IS — SUMO network XML files)
+│   └── network/                   — SUMO network XML files
 │       ├── network.net.xml
 │       ├── routes.rou.xml
 │       └── additional.add.xml
 │
 └── frontend/
-    ├── package.json              (KEEP AS-IS)
-    ├── vite.config.js            (KEEP AS-IS)
-    ├── index.html                (KEEP AS-IS)
+    ├── package.json              
+    ├── vite.config.js            
+    ├── index.html                
     └── src/
-        ├── App.jsx               ★ REPLACED (trivial — just imports Dashboard)
-        ├── main.jsx              (KEEP AS-IS)
-        ├── index.css             (KEEP AS-IS)
+        ├── App.jsx               — just imports Dashboard)
+        ├── main.jsx              
+        ├── index.css             
         ├── api/
-        │   └── api.js            (KEEP AS-IS)
+        │   └── api.js            
         ├── pages/
-        │   └── Dashboard.jsx     ★ REPLACED
+        │   └── Dashboard.jsx     
         └── components/
-            ├── AiDispatcherInbox.jsx  ★ REPLACED
-            ├── BenchmarkPanel.jsx     ★ NEW
-            ├── DQNStatusCard.jsx      ★ NEW
-            ├── LiveMap.jsx            ★ REPLACED
-            ├── MetricsPanel.jsx       ★ REPLACED
-            ├── PredictionPanel.jsx    ★ REPLACED
-            ├── Sidebar.jsx            ★ REPLACED
-            ├── TrainTable.jsx         ★ REPLACED
-            │
-            │   ── OLD FILES: DELETE these, superseded ──
-            ├── AnimatedTrain.jsx      DELETE (imported but never used)
-            └── TrainInfoPanel.jsx     DELETE (superseded by TrainTable)
+            ├── AiDispatcherInbox.jsx  
+            ├── BenchmarkPanel.jsx     
+            ├── DQNStatusCard.jsx      
+            ├── LiveMap.jsx            
+            ├── MetricsPanel.jsx       
+            ├── PredictionPanel.jsx    
+            ├── Sidebar.jsx            
+            ├── TrainTable.jsx         
+            
 ```
 
 ---
